@@ -1,15 +1,15 @@
 # Generating images with a diffusion model
 ## What is even this? 
-This project is a simplified implementation of the [Imagen](https://imagen.research.google/) text-to-image model. More specifically, this is an example of difussion model for image generation. Such a project is an efficient way of learning the difficult topic of modern generative AI by doing and exploring how an functional implementation might work.
+This project is a simplified implementation of the [Imagen](https://imagen.research.google/) text-to-image model. More specifically, this is an example of a diffusion model for image generation. Such a project is an efficient way of learning the difficult topic of modern generative AI by doing and exploring how a functional implementation might work.
 
 ## Main ideas
 When given an image caption, the **Imagen** text-to-image model generates an image that depicts the scene described - well, basically what you would expect from a generative model. This model employs a **cascading diffusion model** and utilizes a **T5 text encoder** to produce a caption encoding. This encoding conditions a base image generator, followed by a series of super-resolution models that refine the base image.
 
 Other interesting aspects of this model worth noting are the concepts of **noise conditioning augmentation** and **dynamic thresholding**.
 
-It is also important to note that this implementation is based on Phil Wang's [implementation](https://github.com/lucidrains/imagen-pytorch) and was made possible by the lage collection of learning materials - both theoretical and practical - available online,  such as articles, tutorials, and blog posts.
+It is also important to note that this implementation is based on Phil Wang's [implementation](https://github.com/lucidrains/imagen-pytorch) and was made possible by the large collection of learning materials - both theoretical and practical - available online,  such as articles, tutorials, and blog posts.
 
-If you want to read the ogirinal Imagen paper, you can find it [here](https://arxiv.org/abs/2205.11487)
+If you want to read the original Imagen paper, you can find it [here](https://arxiv.org/abs/2205.11487)
 
 ## Usage and Getting Started
 First, clone this repository:
@@ -58,7 +58,7 @@ After execution, two directories will be created:
 
 To train a model, execute `train.py` with the appropriate command line arguments. The arguments include:
 
-- `--PARAMETERS` or `-p`: Directory specifying the MinImagen configuration, structured like a `parameters` subdirectory within a Training Directory.
+- `--PARAMETERS` or `-p`: The directory specifies the MinImagen configuration and is structured like a `parameters` subdirectory within a Training Directory.
 - `--NUM_WORKERS` or `-n`: Number of workers for the DataLoaders.
 - `--BATCH_SIZE` or `-b`: Batch size for training.
 - `--MAX_NUM_WORDS` or `-mw`: Maximum number of words allowed in a caption.
@@ -72,7 +72,7 @@ To train a model, execute `train.py` with the appropriate command line arguments
 - `--CHCKPT_NUM` or `-cn`: Interval of batches to create a temporary model checkpoint during training.
 - `--VALID_NUM` or `-vn`: Number of validation images to use.
 - `--RESTART_DIRECTORY` or `-rd`: Training directory to load the MinImagen instance from if resuming training.
-- `--TESTING` or `-test`: Used to run the script with a small MinImagen instance and small dataset for testing.
+- `--TESTING` or `-test`: Used to run the script with a small MinImagen instance and a small dataset for testing.
 
 For example:
 ```bash
